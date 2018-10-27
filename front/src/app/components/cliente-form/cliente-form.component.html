@@ -1,0 +1,32 @@
+<div class="form">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" name="nombre" [(ngModel)]="cliente.nombre">
+  </div>
+  <div class="form-group">
+    <label for="apellido">Apellido</label>
+    <input type="text" class="form-control" name="apellido" [(ngModel)]="cliente.apellido">
+  </div>
+  <div class="form-group">
+      <label for="telefono">Telefono</label>
+      <input type="text" class="form-control" name="telefono" [(ngModel)]="cliente.telefono">
+  </div>  
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-success mr-2" (click)="aceptar()">Aceptar</button>
+    <button class="btn btn-danger ml-2">Cancelar</button>
+  </div>
+</div>
+
+<div class="card mt-2">
+  <div class="card" *ngFor="let cliente of clientes">
+    <div class="row">
+      <div class="col-8">
+          {{cliente.nombre}} {{cliente.apellido}}
+      </div>
+      <div class="col-4 d-flex justify-content-end">
+          <button class="btn btn-primary mr-2" (click)="modificar(cliente.id)">Modificar</button>
+          <button class="btn btn-danger ml-2">Borrar</button> 
+      </div>
+    </div>
+  </div>
+</div>
